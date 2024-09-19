@@ -11,7 +11,7 @@ def load_data():
     return data
 
 def calculate_percentages(data):
-    # Split data to only look at those with a bachelor's degree
+    # split data to only look at those with a bachelor's degree
     data = data[data['sex'] == 'Female']
     data = data[data['race'] != 'White']
     print(data['income'].value_counts(normalize=True) * 100)
@@ -19,7 +19,7 @@ def calculate_percentages(data):
     print(len(data))
     
     count = 0
-    # Loop through the dataframe to find percentage of people with income greater than 50k
+    # loop through the dataframe to find percentage of people with income >50k
     for _, row in data.iterrows():
         if row['income'] == ">50K":
             count += 1
